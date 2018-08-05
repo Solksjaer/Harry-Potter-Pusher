@@ -6,6 +6,9 @@ const cors = require('cors');
 // Create an App.
 const app = express();
 
+// Serve the static files from public.
+app.use( express.static( path.join(__dirname, 'public') ) );
+
 // Include the body-parser middle ware.
 app.use( bodyParser.json() );
 app.use( bodyParser.urlencoded( { extended: false } ) );
