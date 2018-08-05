@@ -4,7 +4,7 @@
 
 Hey developers! This ia a full stack real time Harry Potter house voting web application. It has a real time stats graph, which means, you don't need to refresh the browser to look at the state of the application, see the votes or the results as they come in.
 
-This is for an article I am writing for Pusher, titled **Realtime voting application using Pusher with Node JS**. You can read about it [here](https://pusher.com/tutorials).
+This is for an article I am writing for Pusher, titled **Realtime voting application using Pusher with Node JS**. You soon can read about it [here](https://pusher.com/tutorials).
 
 ## Pre-Requisites
 
