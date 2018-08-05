@@ -6,6 +6,9 @@ const cors = require('cors');
 // Create an App.
 const app = express();
 
+// Vote route.
+const vote = require("./routes/vote")
+
 // Update X-Powered-By headers in Express.
 // Refer https://blog.praveen.science/getting-rid-of-the-x-powered-by-in-express-js-middle-ware-using-blood-sweat/.
 app.use(function (req, res, next) {
@@ -22,6 +25,9 @@ app.use( bodyParser.urlencoded( { extended: false } ) );
 
 // Enable CORS.
 app.use( cors() );
+
+// Handle vote routes.
+app.use("/vote", vote);
 
 // Set the port.
 const port = 3000;
