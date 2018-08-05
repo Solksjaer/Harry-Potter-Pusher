@@ -6,6 +6,13 @@ const cors = require('cors');
 // Create an App.
 const app = express();
 
+// Update X-Powered-By headers in Express.
+// Refer https://blog.praveen.science/getting-rid-of-the-x-powered-by-in-express-js-middle-ware-using-blood-sweat/.
+app.use(function (req, res, next) {
+  res.header("X-Powered-By", "Blood, sweat, and tears.");
+  next();
+});
+
 // Serve the static files from public.
 app.use( express.static( path.join(__dirname, 'public') ) );
 
