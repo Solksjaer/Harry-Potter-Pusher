@@ -18,7 +18,7 @@ router.get("/", (req, res) => {
 
 // Default POST route.
 router.post("/", (req, res) => {
-  pusher.trigger('my-channel', 'my-event', {
+  pusher.trigger('hp-voting', 'hp-house', {
     "message": "hello world"
   });
 });
