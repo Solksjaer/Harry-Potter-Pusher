@@ -22,6 +22,11 @@ router.post("/", (req, res) => {
     "points": 1,
     "house": req.body.house
   });
+
+  return res.json({
+    "success": true,
+    "message": "Thanks for voting."
+  });
 });
 
 // Export the router.
