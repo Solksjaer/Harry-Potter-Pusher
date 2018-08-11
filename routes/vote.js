@@ -19,7 +19,8 @@ router.get("/", (req, res) => {
 // Default POST route.
 router.post("/", (req, res) => {
   pusher.trigger('hp-voting', 'hp-house', {
-    "message": "hello world"
+    "points": 1,
+    "house": req.body.house
   });
 });
 
