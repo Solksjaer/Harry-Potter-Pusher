@@ -16,4 +16,20 @@ $(document).ready(function () {
 			console.log(res);
 		});
 	});
+	// Create the base data points.
+	var dataPoints = [
+		{
+			label: "Gryffindor",
+			y: 0
+		}, {
+			label: "Hufflepuff",
+			y: 0
+		}, {
+			label: "Ravenclaw",
+			y: 0
+		}, {
+			label: "Slytherin",
+			y: 0
+		}
+	];
 });
