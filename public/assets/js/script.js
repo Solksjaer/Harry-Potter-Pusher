@@ -32,4 +32,11 @@ $(document).ready(function () {
 			y: 0
 		}
 	];
+	// Initialise Chart using jQuery selector.
+	// Get the chart container element.
+	var chartContainer = $("#chartContainer");
+	// Check if the element exists in the DOM.
+	if (chartContainer.length === 1) {
+		// Now initialise the chart.
+	}
 });
