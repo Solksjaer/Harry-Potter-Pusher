@@ -46,10 +46,12 @@ $(document).ready(function () {
 			},
 			"data": [
 				{
-					"type": "pie",
+					"type": "column",
 					"dataPoints": dataPoints
 				}
 			]
 		};
+		// Initialise the chart.
+		$("#chartContainer").CanvasJSChart(options);
 	}
 });
