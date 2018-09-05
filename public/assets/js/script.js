@@ -37,6 +37,19 @@ $(document).ready(function () {
 	var chartContainer = $("#chartContainer");
 	// Check if the element exists in the DOM.
 	if (chartContainer.length === 1) {
-		// Now initialise the chart.
+		// Construct the options for the chart.
+		var options = {
+			"animationEnabled": true,
+			"theme": "light1",
+			"title": {
+				"text": "Harry Potter House Results"
+			},
+			"data": [
+				{
+					"type": "pie",
+					"dataPoints": dataPoints
+				}
+			]
+		};
 	}
 });
