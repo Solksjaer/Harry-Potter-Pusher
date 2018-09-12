@@ -1,14 +1,15 @@
 const express = require("express");
 const router = express.Router();
+const PusherServerConfig = require("../config/config");
 
 const Pusher = require('pusher');
 
 const pusher = new Pusher({
-  appId: 'appId',
-  key: 'key',
-  secret: 'secret',
-  cluster: 'eu',
-  encrypted: true
+  appId: PusherServerConfig.appId,
+  key: PusherServerConfig.key,
+  secret: PusherServerConfig.secret,
+  cluster: PusherServerConfig.cluster,
+  encrypted: PusherServerConfig.encrypted
 });
 
 // Default GET route.
