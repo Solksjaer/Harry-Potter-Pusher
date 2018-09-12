@@ -53,5 +53,35 @@ $(document).ready(function () {
 		};
 		// Initialise the chart.
 		$("#chartContainer").CanvasJSChart(options);
+
+		// Subscribe to Pusher
+		// Enable pusher logging - don't include this in production
+		Pusher.logToConsole = true;
+
+		// Initialise a Pusher Object.
+		var pusher = new Pusher(PusherConfig.key, {
+			cluster: PusherConfig.cluster,
+			forceTLS: PusherConfig.forceTLS
+		});
+
+		// Subscribe to the channel.
+		var channel = pusher.subscribe('hp-voting');
+		// Bind to a particular event and listen to the event data.
+		channel.bind('hp-house', function(data) {
+			// Use a higher order Array map.
+			dataPoints = dataPoints.map(function (d) {
+				// Check if the current label is the updated value.
+				if (d.label == data.house) {
+					// Increment the house's value by the number of new points.
+					d.y += data.points;
+				}
+				// Return the original value as this is a map function.
+				return d;
+			});
+
+			// Re-render the chart.
+			$("#chartContainer").CanvasJSChart(options);
+		});
+
 	}
 });
