@@ -1,4 +1,4 @@
-// Add the appId, key, secret, cluster here.
+// Add the key, forceTLS, cluster options here.
 const PusherConfig = {
   key: 'key',
   cluster: 'eu',
