@@ -32,6 +32,16 @@ $(document).ready(function () {
 			y: 0
 		}
 	];
+
+	// Get current data
+	$.get("/vote/data", function (data) {
+		// Update options
+		options.data[0].dataPoints = data;
+
+		// Re-render the chart.
+		$("#chartContainer").CanvasJSChart(options);
+	});
+
 	// Initialise Chart using jQuery selector.
 	// Get the chart container element.
 	var chartContainer = $("#chartContainer");
@@ -68,16 +78,8 @@ $(document).ready(function () {
 		var channel = pusher.subscribe('hp-voting');
 		// Bind to a particular event and listen to the event data.
 		channel.bind('hp-house', function(data) {
-			// Use a higher order Array map.
-			dataPoints = dataPoints.map(function (d) {
-				// Check if the current label is the updated value.
-				if (d.label == data.house) {
-					// Increment the house's value by the number of new points.
-					d.y += data.points;
-				}
-				// Return the original value as this is a map function.
-				return d;
-			});
+			// Update options
+			options.data[0].dataPoints = data;
 
 			// Re-render the chart.
 			$("#chartContainer").CanvasJSChart(options);
